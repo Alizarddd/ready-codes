@@ -6,7 +6,7 @@ chmod +x ng.sh
 ./ng.sh
 clear
 echo "======================="
-echo NGROK IS SETTING UP :)
+echo NGROK IS SETTING UP
 echo "======================="
 ./ngrok tcp --region us 3388 &>/dev/null &
 echo "===================================="
