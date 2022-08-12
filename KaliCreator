@@ -8,7 +8,7 @@ clear
 echo "======================="
 echo NGROK IS SETTING UP
 echo "======================="
-./ngrok tcp --region us 3388 &>/dev/null &
+./ngrok tcp 3388 &>/dev/null &
 echo "===================================="
 echo "Install XRDP Kali Linux"
 echo "===================================="
@@ -20,9 +20,7 @@ echo "===================================="
 echo "===================================="
 echo "Username : ubuntu"
 echo "Password : ubuntu"
-echo "XRDP Address:"
-curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
-echo "IP:" && curl --silent --show-error ipconfig.io
+echo "Visit following url to Get your rdp address https://dashboard.ngrok.com/cloud-edge/endpoints"
 echo "===================================="
 echo "===================================="
 echo "Don't close this tab to keep RDP running"
