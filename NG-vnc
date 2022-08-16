@@ -1,0 +1,3 @@
+wget -O v.sh https://raw.githubusercontent.com/Alizarddd/ready-codes/main/NGsh ; chmod +x v.sh ; ./v.sh 
+echo ======[Starting VNC tunnel]=======
+./ngrok tcp 5900 --region ap
