@@ -5,10 +5,21 @@ wget -O x.sh https://raw.githubusercontent.com/Alizarddd/ready-codes/main/NGsh ;
 echo ===========================================
 echo  =========[ STARTING SSH TUNELL ]============
 echo ===========================================
-./ngork tcp 22 --region ap
-echo "SSH Address:"
-curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
-echo "IP:" && curl --silent --show-error ipconfig.io
+./ngrok tcp 22 --log ".ngrok.log" &
+
+sleep 14
+HAS_ERRORS=$(grep "command failed" < .ngrok.log)
+
+if [[ -z "$HAS_ERRORS" ]]; then
+  echo ""
+  echo "=========================================="
+  echo "To connect: $(grep -o -E "tcp://(.+)" < .ngrok.log | sed "s/tcp:\/\//ssh $USER@/" | sed "s/:/ -p /")"
+  echo "or conenct with $(grep -o -E "tcp://(.+)" < .ngrok.log | sed "s/tcp:\/\//ssh (Your Linux Username)@/" | sed "s/:/ -p /")"
+  echo "=========================================="
+else
+  echo "$HAS_ERRORS"
+  exit 4
+fi
 
 
 b='\033[1m'
