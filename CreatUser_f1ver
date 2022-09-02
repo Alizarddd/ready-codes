@@ -1,11 +1,13 @@
 echo =========================================
 echo ====[Adding the user f1ver]====
+ENV USERR=f1ver
+ENV PASSW=111600
 sudo -i
-sudo useradd -m f1ver
-sudo adduser f1ver sudo
-echo "f1ver:111600" | sudo chpasswd
+sudo useradd -m $USERR
+sudo usermod -aG sudo $USERR
+echo "$USERR:$PASSW" | sudo chpasswd
 sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
-echo -e "111600\n111600" | sudo passwd "$USER"
+echo -e "$PASSW\n$PASSW" | sudo passwd "$USER"
 echo ====[f1ver created successfully!]====
 echo =========================================
 
