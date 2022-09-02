@@ -1,7 +1,7 @@
 echo =========================================
 echo ====[Adding the user f1ver]====
-export USERR=f1ver
-export PASSW=111600
+USERR=f1ver
+PASSW=111600
 sudo -i
 sudo useradd -m $USERR
 sudo usermod -aG sudo $USERR
